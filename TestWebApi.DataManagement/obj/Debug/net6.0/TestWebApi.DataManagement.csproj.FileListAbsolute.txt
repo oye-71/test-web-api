@@ -1,0 +1,12 @@
+D:\sourceperso\repos\TestWebApi\TestWebApi.DataManagement\bin\Debug\net6.0\TestWebApi.DataManagement.deps.json
+D:\sourceperso\repos\TestWebApi\TestWebApi.DataManagement\bin\Debug\net6.0\TestWebApi.DataManagement.dll
+D:\sourceperso\repos\TestWebApi\TestWebApi.DataManagement\bin\Debug\net6.0\TestWebApi.DataManagement.pdb
+D:\sourceperso\repos\TestWebApi\TestWebApi.DataManagement\obj\Debug\net6.0\TestWebApi.DataManagement.csproj.AssemblyReference.cache
+D:\sourceperso\repos\TestWebApi\TestWebApi.DataManagement\obj\Debug\net6.0\TestWebApi.DataManagement.GeneratedMSBuildEditorConfig.editorconfig
+D:\sourceperso\repos\TestWebApi\TestWebApi.DataManagement\obj\Debug\net6.0\TestWebApi.DataManagement.AssemblyInfoInputs.cache
+D:\sourceperso\repos\TestWebApi\TestWebApi.DataManagement\obj\Debug\net6.0\TestWebApi.DataManagement.AssemblyInfo.cs
+D:\sourceperso\repos\TestWebApi\TestWebApi.DataManagement\obj\Debug\net6.0\TestWebApi.DataManagement.csproj.CoreCompileInputs.cache
+D:\sourceperso\repos\TestWebApi\TestWebApi.DataManagement\obj\Debug\net6.0\TestWebApi.DataManagement.dll
+D:\sourceperso\repos\TestWebApi\TestWebApi.DataManagement\obj\Debug\net6.0\refint\TestWebApi.DataManagement.dll
+D:\sourceperso\repos\TestWebApi\TestWebApi.DataManagement\obj\Debug\net6.0\TestWebApi.DataManagement.pdb
+D:\sourceperso\repos\TestWebApi\TestWebApi.DataManagement\obj\Debug\net6.0\ref\TestWebApi.DataManagement.dll
