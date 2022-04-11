@@ -18,8 +18,8 @@ namespace TestWebApi.DataManagement.DbManagement
 
             var ordinateurs = new Ordinateur[]
             {
-                new Ordinateur{ Brand = "Asus", Name = "Tuf Gaming 15", Price = 1200 },
-                new Ordinateur { Brand = "Acer", Name = "Swift 3", Price=650 }
+                new Ordinateur { Brand = "Asus", Name = "Tuf Gaming 15", Price = 1200 },
+                new Ordinateur { Brand = "Acer", Name = "Swift 3", Price = 650 }
             };
             foreach (var ordinateur in ordinateurs)
             {
@@ -29,8 +29,8 @@ namespace TestWebApi.DataManagement.DbManagement
 
             var magasins = new Magasin[]
             {
-                new Magasin{ Name = "LDLC", Location = "Lyon Vaise" },
-                new Magasin{ Name = "Auchan", Location = "Dardilly" }
+                new Magasin { Name = "LDLC", Location = "Lyon Vaise" },
+                new Magasin { Name = "Auchan", Location = "Dardilly" }
             };
             foreach (var magasin in magasins)
             {
