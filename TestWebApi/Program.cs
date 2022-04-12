@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using TestWebApi.DataManagement.DbManagement;
 using TestWebApi.Web.Extensions;
+using TestWebApi.Web.Middlewares;
 
 namespace TestWebApi.Web
 {
@@ -33,6 +34,7 @@ namespace TestWebApi.Web
             }
             app.UseHttpsRedirection();
             app.UseAuthorization();
+            app.UseMiddleware<ApiKeyMiddleware>(); // Api Key management : https://www.c-sharpcorner.com/article/using-api-key-authentication-to-secure-asp-net-core-web-api/
             app.MapControllers();
 
             app.Run();
