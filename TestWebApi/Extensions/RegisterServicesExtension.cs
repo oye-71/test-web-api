@@ -1,6 +1,6 @@
-﻿using TestWebApi.DataManagement.Interfacage.DbEntities;
+﻿using TestWebApi.Business.Interfacage.Services;
+using TestWebApi.Business.Services;
 using TestWebApi.DataManagement.Interfacage.Repositories;
-using TestWebApi.DataManagement.Models;
 using TestWebApi.DataManagement.Repositories;
 
 namespace TestWebApi.Web.Extensions
@@ -9,7 +9,15 @@ namespace TestWebApi.Web.Extensions
     {
         public static IServiceCollection RegisterServices(this IServiceCollection services)
         {
+            // Add generic services
             services.AddTransient(typeof(IRepository<>), typeof(BaseRepository<>));
+
+            // Add Repositories
+            services.AddTransient<IOrdinateurRepository, OrdinateurRepository>();
+
+            // Add Services
+            services.AddTransient<IOrdinateurService, OrdinateurService>();
+
             return services;
         }
     }

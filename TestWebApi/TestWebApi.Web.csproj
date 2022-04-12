@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\TestWebApi.Business\TestWebApi.Business.csproj" />
     <ProjectReference Include="..\TestWebApi.DataManagement\TestWebApi.DataManagement.csproj" />
   </ItemGroup>
 

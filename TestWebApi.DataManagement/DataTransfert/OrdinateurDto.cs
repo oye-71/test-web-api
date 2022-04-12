@@ -10,6 +10,7 @@ namespace TestWebApi.DataManagement.DataTransfert
 {
     public class OrdinateurDto
     {
+        public Guid? Id { get; set; }
         public string Name { get; set; }
         public string Brand { get; set; }
         public float Price { get; set; }
@@ -18,6 +19,7 @@ namespace TestWebApi.DataManagement.DataTransfert
         {
             get => x => new OrdinateurDto
             {
+                Id = x.Id,
                 Name = x.Name,
                 Brand = x.Brand,
                 Price = x.Price

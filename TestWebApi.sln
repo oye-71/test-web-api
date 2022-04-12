@@ -5,7 +5,9 @@ VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestWebApi.Web", "TestWebApi\TestWebApi.Web.csproj", "{2611C8FE-39C2-4FB2-AFE6-B7F32F7E4A74}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestWebApi.DataManagement", "TestWebApi.DataManagement\TestWebApi.DataManagement.csproj", "{FED0BF4C-1005-4433-9710-E3EA58447C5A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestWebApi.DataManagement", "TestWebApi.DataManagement\TestWebApi.DataManagement.csproj", "{FED0BF4C-1005-4433-9710-E3EA58447C5A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestWebApi.Business", "TestWebApi.Business\TestWebApi.Business.csproj", "{ECB4309C-AEC6-4B0E-A2E4-BD08CFAA7BD2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{FED0BF4C-1005-4433-9710-E3EA58447C5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FED0BF4C-1005-4433-9710-E3EA58447C5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FED0BF4C-1005-4433-9710-E3EA58447C5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECB4309C-AEC6-4B0E-A2E4-BD08CFAA7BD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECB4309C-AEC6-4B0E-A2E4-BD08CFAA7BD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECB4309C-AEC6-4B0E-A2E4-BD08CFAA7BD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECB4309C-AEC6-4B0E-A2E4-BD08CFAA7BD2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
