@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TestWebApi.Business.Interfacage.Services;
+﻿using TestWebApi.Business.Interfacage.Services;
 using TestWebApi.DataManagement.DataTransfert;
 using TestWebApi.DataManagement.Interfacage.Repositories;
 using TestWebApi.DataManagement.Models;
@@ -26,14 +21,8 @@ namespace TestWebApi.Business.Services
             await _ordinateurRepository.Add(entity);
         }
 
-        public async Task<IEnumerable<OrdinateurDto>> GetAllOrdinateurs()
-        {
-            return await _ordinateurRepository.GetAllOrdinateurs();
-        }
+        public async Task<IEnumerable<OrdinateurDto>> GetAllOrdinateurs() => await _ordinateurRepository.GetAllOrdinateurs();
 
-        public async Task<OrdinateurDto> GetOrdinateurById(Guid id)
-        {
-            return await _ordinateurRepository.GetOrdinateurById(id);
-        }
+        public async Task<OrdinateurDto> GetOrdinateurById(Guid id) => await _ordinateurRepository.GetOrdinateurById(id);
     }
 }

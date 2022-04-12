@@ -14,10 +14,12 @@ namespace TestWebApi.Web.Controllers
     public class OrdinateurController : ControllerBase
     {
         private readonly IOrdinateurService _ordinateurService;
+        private readonly IMagasinService _magasinService;
 
-        public OrdinateurController(IOrdinateurService ordinateurService)
+        public OrdinateurController(IOrdinateurService ordinateurService, IMagasinService magasinService)
         {
             _ordinateurService = ordinateurService;
+            _magasinService = magasinService;
         }
 
         [HttpGet, Route("GetAllComputers")]
@@ -36,6 +38,12 @@ namespace TestWebApi.Web.Controllers
         public async Task AddComputer(OrdinateurDto ordinateur)
         {
             await _ordinateurService.AddOrdinateur(ordinateur);
+        }
+
+        [HttpGet, Route("GetAllMagasinWithComputers")]
+        public async Task<IEnumerable<MagasinWithComputersDto>> GetAllMagasinWithComputers()
+        {
+            return await _magasinService.GetAllMagasinWithComputers();
         }
     }
 }

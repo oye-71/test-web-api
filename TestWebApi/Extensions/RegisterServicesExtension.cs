@@ -14,9 +14,11 @@ namespace TestWebApi.Web.Extensions
 
             // Add Repositories
             services.AddTransient<IOrdinateurRepository, OrdinateurRepository>();
+            services.AddTransient<IMagasinRepository, MagasinRepository>();
 
             // Add Services
             services.AddTransient<IOrdinateurService, OrdinateurService>();
+            services.AddTransient<IMagasinService, MagasinService>();
 
             return services;
         }
