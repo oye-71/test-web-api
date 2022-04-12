@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestWebApi.Web", "TestWebApi\TestWebApi.Web.csproj", "{2611C8FE-39C2-4FB2-AFE6-B7F32F7E4A74}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestWebApi.Web", "TestWebApi.Web\TestWebApi.Web.csproj", "{2611C8FE-39C2-4FB2-AFE6-B7F32F7E4A74}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestWebApi.DataManagement", "TestWebApi.DataManagement\TestWebApi.DataManagement.csproj", "{FED0BF4C-1005-4433-9710-E3EA58447C5A}"
 EndProject
