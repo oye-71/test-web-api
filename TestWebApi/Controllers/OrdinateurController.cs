@@ -45,5 +45,17 @@ namespace TestWebApi.Web.Controllers
         {
             return await _magasinService.GetAllMagasinWithComputers();
         }
+
+        [HttpGet, Route("AddAndActivateStock")]
+        public async Task AddAndActivateStock(Guid ordinateurId, Guid magasinId)
+        {
+            await _ordinateurService.AddAndActivateStock(ordinateurId, magasinId);
+        }
+
+        [HttpGet, Route("SetOutOfStock")]
+        public async Task SetOutOfStock(Guid stockId)
+        {
+            await _ordinateurService.OutOfStock(stockId);
+        }
     }
 }

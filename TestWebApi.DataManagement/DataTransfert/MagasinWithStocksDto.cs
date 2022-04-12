@@ -17,12 +17,12 @@ namespace TestWebApi.DataManagement.DataTransfert
                 Id = x.Id,
                 Name = x.Name,
                 Location = x.Location,
-                Ordinateurs = x.Stocks.Select(x => x.Ordinateur).Select(o => new OrdinateurDto
+                Ordinateurs = x.Stocks.Where(x => x.IsDispo).Select(x => new OrdinateurDto
                 {
-                    Id = o.Id,
-                    Name = o.Name,
-                    Brand = o.Brand,
-                    Price = o.Price,
+                    Id = x.Ordinateur.Id,
+                    Name = x.Ordinateur.Name,
+                    Brand = x.Ordinateur.Brand,
+                    Price = x.Ordinateur.Price,
                 })
             };
         }

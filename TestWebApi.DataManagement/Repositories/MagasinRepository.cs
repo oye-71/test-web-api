@@ -18,7 +18,7 @@ namespace TestWebApi.DataManagement.Repositories
         public async Task<IEnumerable<MagasinWithComputersDto>> GetAllMagasinsWithStock()
         {
             return await _dbContext.Set<Magasin>()
-                .Where(x => x.Stocks.Count > 0)
+                .Where(x => x.Stocks.Where(x => x.IsDispo).Count() > 0)
                 .Select(MagasinWithComputersDto.Projection)
                 .ToListAsync();
         }
