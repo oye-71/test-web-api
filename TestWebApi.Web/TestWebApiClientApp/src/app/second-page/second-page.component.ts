@@ -8,7 +8,7 @@ import { ComputerService } from '../services/computer.service'
   styleUrls: ['./second-page.component.scss']
 })
 export class SecondPageComponent implements OnInit {
-  subtitle: string = "Liste des éléments"
+  subtitle: string = "Liste des éléments. Ce sont des éléments de test"
 
   computers: Ordinateur[]
 

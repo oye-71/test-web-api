@@ -14,7 +14,7 @@ namespace TestWebApi.Web.Extensions
             {
                 options.AddDefaultPolicy(builder =>
                 {
-                    builder.WithHeaders("ComputersApiKey");
+                    builder.AllowAnyHeader();
                     builder.WithOrigins("http://localhost:4200");
                 });
             });

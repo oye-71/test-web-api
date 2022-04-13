@@ -1,7 +1,11 @@
-<h1>{{ title }}</h1>
-<nav>
-    <a routerLink="/">Home</a>
-    <a routerLink="/computers">Ordinateurs</a>
-    <a routerLink="/realComputers">Ordinateurs en base</a>
-</nav>
-<router-outlet></router-outlet>
+<div class="container">
+    <div class="head-center">
+        <h1>{{ title }}</h1>
+        <nav>
+            <a routerLink="/">Home</a>
+            <a routerLink="/addComputer">Ajouter un ordinateur</a>
+            <a routerLink="/realComputers">Ordinateurs en base</a>
+        </nav>
+    </div>
+    <router-outlet></router-outlet>
+</div>
