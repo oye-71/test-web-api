@@ -1,0 +1,6 @@
+<h2>{{ subtitle }}</h2>
+<div *ngFor="let computer of computerDtos">
+    <div>{{ computer.brand | uppercase }} {{ computer.name }}</div>
+    <div>Prix : {{ computer.price }}€</div>
+    <br />
+</div>

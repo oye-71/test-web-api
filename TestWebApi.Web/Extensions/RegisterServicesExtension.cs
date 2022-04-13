@@ -9,6 +9,16 @@ namespace TestWebApi.Web.Extensions
     {
         public static IServiceCollection RegisterServices(this IServiceCollection services)
         {
+            // Cors policy for the angular application
+            services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(builder =>
+                {
+                    builder.WithHeaders("ComputersApiKey");
+                    builder.WithOrigins("http://localhost:4200");
+                });
+            });
+
             // Add generic services
             services.AddTransient(typeof(IRepository<>), typeof(BaseRepository<>));
 

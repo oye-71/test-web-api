@@ -34,6 +34,7 @@ namespace TestWebApi.Web
             }
             app.UseHttpsRedirection();
             app.UseAuthorization();
+            app.UseCors();
             app.UseMiddleware<ApiKeyMiddleware>(); // Api Key management : https://www.c-sharpcorner.com/article/using-api-key-authentication-to-secure-asp-net-core-web-api/
             app.MapControllers();
 
