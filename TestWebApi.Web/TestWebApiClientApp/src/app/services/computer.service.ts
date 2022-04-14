@@ -3,6 +3,7 @@ import { ErrorHandler, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Ordinateur, OrdinateurDto } from '../models/ordinateur';
+import { MagasinWithComputers } from '../models/magasin';
 
 @Injectable({
   providedIn: 'root'
@@ -23,26 +24,26 @@ export class ComputerService {
     return this._http.post<void>(environment.ordinateursUrl + "AddComputer", ordinateur, options)
   }
 
-  public getMockedComputers(): Ordinateur[] {
-    return [
-      {
-        name: "Swift 3",
-        brand: "Acer",
-        price: 700
-      },
-      {
-        name: "Katana GF66",
-        brand: "msi",
-        price: 1100
-      },
-    ]
+  public deleteComputer(ordinateurId: string): Observable<void> {
+    let options = this.createBaseOptions()
+    options.params = {
+      computerId: ordinateurId
+    }
+    // On fait le delete en get pour éviter les soucis de CORS (header Allow-Method)
+    return this._http.get<void>(environment.ordinateursUrl + "DeleteComputerById", options)
   }
 
-  private createBaseOptions(): { headers: HttpHeaders } {
+  public getMagasinWithStocks(){
+    let options = this.createBaseOptions()
+    return this._http.get<MagasinWithComputers>(environment.ordinateursUrl + "GetAllMagasinWithComputers", options)
+  }
+
+  private createBaseOptions(): { headers: HttpHeaders, params: any } {
     return {
       headers: new HttpHeaders({
         'ComputersApiKey': environment.serverApiKey
-      })
+      }),
+      params: null
     }
   }
 }

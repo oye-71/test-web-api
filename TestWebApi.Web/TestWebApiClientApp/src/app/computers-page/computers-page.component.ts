@@ -16,6 +16,20 @@ export class ComputersPageComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.loadData()
+  }
+
+  loadData(): void {
     this._ordinateurService.getComputers().subscribe(elements => this.computerDtos = elements)
+  }
+
+  onDeleteComputer(cptid: string): void {
+    this._ordinateurService.deleteComputer(cptid).subscribe(
+      null,
+      err => console.error(err),
+      () => {
+        this.loadData()
+      } 
+    )
   }
 }

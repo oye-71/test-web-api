@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Ordinateur } from '../models/ordinateur'
+import { MagasinWithComputers } from '../models/magasin';
 import { ComputerService } from '../services/computer.service'
 
 @Component({
@@ -8,9 +8,9 @@ import { ComputerService } from '../services/computer.service'
   styleUrls: ['./second-page.component.scss']
 })
 export class SecondPageComponent implements OnInit {
-  subtitle: string = "Liste des éléments. Ce sont des éléments de test"
+  subtitle: string = "Bienvenue"
 
-  computers: Ordinateur[]
+  magasins: MagasinWithComputers
 
   constructor(
     private _computerService: ComputerService
@@ -21,7 +21,10 @@ export class SecondPageComponent implements OnInit {
   }
 
   getComputers(): void {
-    this.computers = this._computerService.getMockedComputers()
+    this._computerService.getMagasinWithStocks().subscribe(
+      mag => this.magasins = mag,
+      err => console.error(err)
+    )
   }
 
 }

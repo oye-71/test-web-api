@@ -8,9 +8,11 @@ import { ComputerService } from '../services/computer.service';
   styleUrls: ['./add-computer.component.scss']
 })
 export class AddComputerComponent implements OnInit {
-  public ordinateurName: string
-  public ordinateurBrand: string
-  public ordinateurPrice: number = 0
+  ordinateurName: string
+  ordinateurBrand: string
+  ordinateurPrice: number = 0
+
+  isLoading: boolean = false
 
   constructor(
     private _computerService: ComputerService
@@ -24,20 +26,22 @@ export class AddComputerComponent implements OnInit {
       name: this.ordinateurName,
       brand: this.ordinateurBrand,
       price: this.ordinateurPrice
-    } 
+    }
+    this.isLoading = true
     this._computerService.addComputer(cpt).subscribe(
-      res => null,
-      err => console.error("Bad things happened !" + err),
+      null,
+      err => console.error(err),
       () => {
         this.ordinateurBrand = this.ordinateurName = null
         this.ordinateurPrice = 0
+        this.isLoading = false
       }
     )
   }
 
   get canAdd() {
     return this.ordinateurName != null && this.ordinateurName != ""
-    && this.ordinateurBrand != null && this.ordinateurBrand != ""
-    && this.ordinateurPrice != null && this.ordinateurPrice != 0
+      && this.ordinateurBrand != null && this.ordinateurBrand != ""
+      && this.ordinateurPrice != null && this.ordinateurPrice != 0
   }
 }

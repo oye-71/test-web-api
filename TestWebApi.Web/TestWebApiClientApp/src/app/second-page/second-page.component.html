@@ -1,6 +1,15 @@
-<h2>{{ subtitle }}</h2>
-<div *ngFor="let computer of computers">
-    <div>{{ computer.brand | uppercase }} {{ computer.name }}</div>
-    <div>Prix : {{ computer.price }}€</div>
-    <br />
+<h2>Bienvenue</h2>
+<h3>Voici les magasins qui ont du stock</h3>
+<div class="magasins-container">
+    <div *ngFor="let magasin of magasins">
+        <h4>{{ magasin.name }}, {{ magasin.location }}</h4>
+        <div class="computers-list-container-compact">
+            <div *ngFor="let computer of magasin.ordinateurs">
+                <div class="computer-mini-tile">
+                    <div class="computer-name">{{ computer.brand | uppercase }} {{ computer.name }}</div>
+                    <div class="computer-price">€ {{ computer.price }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

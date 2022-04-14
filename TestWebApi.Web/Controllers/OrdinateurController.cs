@@ -57,5 +57,11 @@ namespace TestWebApi.Web.Controllers
         {
             await _ordinateurService.OutOfStock(stockId);
         }
+
+        [HttpGet, Route("DeleteComputerById")]
+        public async Task DeleteComputerById(Guid computerId)
+        {
+            await _ordinateurService.DeleteComputerById(computerId);
+        }
     }
 }

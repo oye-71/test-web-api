@@ -47,5 +47,14 @@ namespace TestWebApi.Business.Services
             stock.IsDispo = false;
             await _stockRepository.Update(stock);
         }
+
+        public async Task DeleteComputerById(Guid computerId)
+        {
+            var entity = await _ordinateurRepository.GetById(computerId);
+            if (entity != null)
+            {
+                await _ordinateurRepository.Delete(entity);
+            }
+        }
     }
 }
