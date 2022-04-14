@@ -34,6 +34,12 @@ namespace TestWebApi.Web.Controllers
             return await _ordinateurService.GetOrdinateurById(computerId);
         }
 
+        [HttpGet, Route("GetAllMagasins")]
+        public async Task<IEnumerable<MagasinDto>> GetAllMagasins()
+        {
+            return await _magasinService.GetAllMagasinDtos();
+        }
+
         [HttpPost, Route("AddComputer")]
         public async Task AddComputer(OrdinateurDto ordinateur)
         {
@@ -47,9 +53,9 @@ namespace TestWebApi.Web.Controllers
         }
 
         [HttpGet, Route("AddAndActivateStock")]
-        public async Task AddAndActivateStock(Guid ordinateurId, Guid magasinId)
+        public async Task<bool> AddAndActivateStock(Guid ordinateurId, Guid magasinId)
         {
-            await _ordinateurService.AddAndActivateStock(ordinateurId, magasinId);
+            return await _ordinateurService.AddAndActivateStock(ordinateurId, magasinId);
         }
 
         [HttpGet, Route("SetOutOfStock")]

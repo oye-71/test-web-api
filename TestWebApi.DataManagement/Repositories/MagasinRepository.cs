@@ -22,5 +22,13 @@ namespace TestWebApi.DataManagement.Repositories
                 .Select(MagasinWithComputersDto.Projection)
                 .ToListAsync();
         }
+
+        public async Task<IEnumerable<MagasinDto>> GetAllMagasinDtos()
+        {
+            return await _dbContext.Set<Magasin>()
+                .Select(MagasinDto.Projection)
+                .OrderBy(m => m.Name)
+                .ToListAsync();
+        }
     }
 }

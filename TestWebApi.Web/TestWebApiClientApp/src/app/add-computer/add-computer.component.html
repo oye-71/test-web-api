@@ -1,21 +1,57 @@
-<div class="computer-form">
-    <div class="form-container" *ngIf="!isLoading">
-        <h3>Formulaire d'ajout d'éléments</h3>
-        <div class="form-element">
-            <label>Marque</label>
-            <input type="text" placeholder="Marque..." [(ngModel)]="ordinateurBrand" />
-        </div>
-        <div class="form-element">
-            <label>Nom</label>
-            <input type="text" placeholder="Nom..." [(ngModel)]="ordinateurName" />
-        </div>
-        <div class="form-element">
-            <label>Prix</label>
-            <input type="number" step='0.01' placeholder="Prix..." [(ngModel)]="ordinateurPrice" />
+<div class="computer-forms-container">
+    <div>
+        <div class="computer-form">
+            <div class="form-container" *ngIf="!isLoading">
+                <h3>Ajouter un ordinateur</h3>
+                <div class="form-element">
+                    <label>Marque</label>
+                    <input type="text" placeholder="Marque..." [(ngModel)]="ordinateurBrand" />
+                </div>
+                <div class="form-element">
+                    <label>Nom</label>
+                    <input type="text" placeholder="Nom..." [(ngModel)]="ordinateurName" />
+                </div>
+                <div class="form-element">
+                    <label>Prix</label>
+                    <input type="number" step='0.01' placeholder="Prix..." [(ngModel)]="ordinateurPrice" />
+                </div>
+            </div>
+            <div *ngIf="isLoading" class="msg-info">
+                Enregistrement en cours...
+            </div>
+            <button type="button" class="send" (click)="onAddComputer()" [disabled]="!canAdd">Ajouter</button>
         </div>
     </div>
-    <div *ngIf="isLoading">
-        Enregistrement en cours...
+    <div>
+        <div class="computer-form">
+            <div class="form-container" *ngIf="!isLoadingStocks">
+                <h3>Notifier des stocks</h3>
+                <div class="form-element">
+                    <label>Ordinateur</label>
+                    <select [(ngModel)]="selectedOrdinateurId">
+                        <option selected [value]="null">-</option>
+                        <option *ngFor="let ordinateur of allOrdinateurs" [value]="ordinateur.id">
+                            {{ ordinateur.brand | uppercase }} {{ ordinateur.name }}
+                        </option>
+                    </select>
+                </div>
+                <div class="form-element">
+                    <label>En stock chez</label>
+                    <select [(ngModel)]="selectedMagasinId">
+                        <option selected [value]="null">-</option>
+                        <option *ngFor="let magasin of allMagasins" [value]="magasin.id">
+                            {{ magasin.name }} {{ magasin.location }}
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div *ngIf="isLoadingStocks" class="msg-info">
+                Enregistrement en cours...
+            </div>
+            <div *ngIf="displayStockMsg" class="msg-info">
+                Le stock était déjà déclaré. Il est de nouveau disponible.
+            </div>
+            <button type="button" class="send" (click)="onAddStock()" [disabled]="!canAddStocks">Ajouter</button>
+        </div>
     </div>
-    <button type="button" class="send" (click)="onAddComputer()" [disabled]="!canAdd">Ajouter</button>
 </div>

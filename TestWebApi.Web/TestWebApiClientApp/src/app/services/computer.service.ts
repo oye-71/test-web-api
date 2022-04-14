@@ -1,9 +1,10 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { ErrorHandler, Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, ObservableLike } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Ordinateur, OrdinateurDto } from '../models/ordinateur';
-import { MagasinWithComputers } from '../models/magasin';
+import { MagasinDto, MagasinWithComputers } from '../models/magasin';
+import { toPublicName } from '@angular/compiler/src/i18n/serializers/xmb';
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +18,11 @@ export class ComputerService {
   public getComputers(): Observable<OrdinateurDto[]> {
     let options = this.createBaseOptions()
     return this._http.get<OrdinateurDto[]>(environment.ordinateursUrl + "GetAllComputers", options)
+  }
+
+  public getMagasins(): Observable<MagasinDto[]> {
+    let options = this.createBaseOptions()
+    return this._http.get<MagasinDto[]>(environment.ordinateursUrl + "GetAllMagasins", options)
   }
 
   public addComputer(ordinateur: Ordinateur): Observable<void> {
@@ -33,12 +39,22 @@ export class ComputerService {
     return this._http.get<void>(environment.ordinateursUrl + "DeleteComputerById", options)
   }
 
-  public getMagasinWithStocks(){
+  public getMagasinWithStocks(): Observable<MagasinWithComputers[]> {
     let options = this.createBaseOptions()
-    return this._http.get<MagasinWithComputers>(environment.ordinateursUrl + "GetAllMagasinWithComputers", options)
+    return this._http.get<MagasinWithComputers[]>(environment.ordinateursUrl + "GetAllMagasinWithComputers", options)
   }
 
-  private createBaseOptions(): { headers: HttpHeaders, params: any } {
+  public addStocks(computerId: string, magasinId: string): Observable<boolean> {
+    let options = this.createBaseOptions()
+    options.params = {
+      ordinateurId: computerId,
+      magasinId: magasinId 
+    }
+    console.log(options)
+    return this._http.get<boolean>(environment.ordinateursUrl + "AddAndActivateStock", options)
+  }
+
+  private createBaseOptions(): { headers: HttpHeaders, params?: any } {
     return {
       headers: new HttpHeaders({
         'ComputersApiKey': environment.serverApiKey

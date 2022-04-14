@@ -13,6 +13,8 @@ namespace TestWebApi.Business.Services
             _magasinRepository = magasinRepository;
         }
 
+        public async Task<IEnumerable<MagasinDto>> GetAllMagasinDtos() => await _magasinRepository.GetAllMagasinDtos();
+
         public async Task<IEnumerable<MagasinWithComputersDto>> GetAllMagasinWithComputers() => await _magasinRepository.GetAllMagasinsWithStock();
     }
 }

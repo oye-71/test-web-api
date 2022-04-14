@@ -5,6 +5,7 @@ namespace TestWebApi.DataManagement.Interfacage.Repositories
 {
     public interface IMagasinRepository : IRepository<Magasin>
     {
-        public Task<IEnumerable<MagasinWithComputersDto>> GetAllMagasinsWithStock();
+        Task<IEnumerable<MagasinWithComputersDto>> GetAllMagasinsWithStock();
+        Task<IEnumerable<MagasinDto>> GetAllMagasinDtos();
     }
 }

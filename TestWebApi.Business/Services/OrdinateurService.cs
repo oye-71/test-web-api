@@ -27,18 +27,21 @@ namespace TestWebApi.Business.Services
 
         public async Task<OrdinateurDto> GetOrdinateurById(Guid id) => await _ordinateurRepository.GetOrdinateurById(id);
 
-        public async Task AddAndActivateStock(Guid ordinateurId, Guid magasinId)
+        public async Task<bool> AddAndActivateStock(Guid ordinateurId, Guid magasinId)
         {
             var stock = await _stockRepository.GetStockByComputerIdAndMagasinId(ordinateurId, magasinId);
+            bool isCreated = false;
             if (stock == null)
             {
                 stock = new Stock { MagasinId = magasinId, OrdinateurId = ordinateurId, IsDispo = true };
+                isCreated = true;
             }
             else
             {
                 stock.IsDispo = true;
             }
             await _stockRepository.AddOrUpdate(stock);
+            return isCreated;
         }
 
         public async Task OutOfStock(Guid stockId)

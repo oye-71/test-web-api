@@ -10,7 +10,7 @@ import { ComputerService } from '../services/computer.service'
 export class SecondPageComponent implements OnInit {
   subtitle: string = "Bienvenue"
 
-  magasins: MagasinWithComputers
+  magasins: MagasinWithComputers[]
 
   constructor(
     private _computerService: ComputerService

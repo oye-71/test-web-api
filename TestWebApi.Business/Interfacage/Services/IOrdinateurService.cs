@@ -7,7 +7,7 @@ namespace TestWebApi.Business.Interfacage.Services
         Task<OrdinateurDto> GetOrdinateurById(Guid id);
         Task<IEnumerable<OrdinateurDto>> GetAllOrdinateurs();
         Task AddOrdinateur(OrdinateurDto ordinateur);
-        Task AddAndActivateStock(Guid ordinateurId, Guid magasinId);
+        Task<bool> AddAndActivateStock(Guid ordinateurId, Guid magasinId);
         Task OutOfStock(Guid stockId);
         Task DeleteComputerById(Guid computerId);
     }
